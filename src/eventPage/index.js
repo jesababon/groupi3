@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 
-class App extends Component {
+class EventPage extends Component {
     render() {
         return <div className="App">Event Page</div>;
     }
