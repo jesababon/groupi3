@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./style.css";
 
-class EventDetails extends Component {
+class App extends Component {
   render() {
-    return <div className="EventDetails">This is the event details component</div>;
+    return <div className="App">Groupi3</div>;
   }
 }
 
-export default EventDetails;
+export default App;
