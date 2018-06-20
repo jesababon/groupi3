@@ -8,6 +8,7 @@ const app = express();
 // and fallback to 4567
 const PORT = process.env.PORT || 4567;
 
+app.use('/static', express.static('build/static'));
 
 // =================================
 // WRITE ALL ROUTES ABOVE PRODUCTION 
