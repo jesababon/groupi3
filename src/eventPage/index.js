@@ -5,6 +5,8 @@ const API = '';
 
 class EventPage extends Component {
 
+<div className="App">Hello World</div>;
+
     constructor(props){
         super(props)
 
@@ -30,7 +32,7 @@ class EventPage extends Component {
             });
         });
     }
-    
+
     render() {
        return (
          <div className="eventPage">
