@@ -33,8 +33,8 @@ app.use('/static', express.static('build/static'));
 console.log('hello world');
 
 app.post("/register", (request, response) => {    
-  console.log('hello world')
-  const password = request.body.password;  
+  console.log('register')
+  const password = request.body.password; 
   bcrypt
     .hash(password, saltRounds)
     .then(hash => {

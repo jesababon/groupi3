@@ -21,9 +21,24 @@ class Register extends Component {
     this.setState(newState);
   }
 
-  onFormSubmit(event) {
-    console.log('register');
-    event.preventDefault();
+  onFormSubmit(evt) {
+    evt.preventDefault();
+    const body = {
+      username: this.state.username,
+      password: this.state.password,
+    }
+    fetch('/register', {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      /* Necessary to pass the session cookie along with the request */
+      credentials: "same-origin"
+    }).then(response => response.json())
+      .then(user => {
+        this.props.onUserLoggedIn(user)
+      });
   }
 
   render() {

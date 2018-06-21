@@ -9,7 +9,7 @@ User.findByUsername = username => {
 
 User.create = newUserObj =>
   db.one(
-    "INSERT INTO users (userName, password_digest) VALUES ($1, $2) RETURNING *",
+    "INSERT INTO users (username, password_digest) VALUES ($1, $2) RETURNING *",
     [newUserObj.username, newUserObj.password_digest]
   );
 

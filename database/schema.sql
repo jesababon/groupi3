@@ -5,7 +5,7 @@ CREATE DATABASE groupi3db;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY NOT NULL,
-    userName VARCHAR(20),
+    username VARCHAR(20),
     password_digest VARCHAR(255)
 );
 
