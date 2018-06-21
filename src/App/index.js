@@ -1,7 +1,7 @@
 
 import React, { Component } from "react";
 import "./style.css";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import EventPage from "../EventPage";
 import Homepage from '../HomePage';
 import Login from "../Login";
@@ -15,6 +15,10 @@ class App extends Component {
       userLoggedIn: false
     }
     this.updateUserLoggedIn = this.updateUserLoggedIn.bind(this);
+
+    window.addEventListener("load", function (event) {
+      console.log("All resources finished loading!");
+    });
   }
 
   updateUserLoggedIn(user) {
@@ -25,25 +29,28 @@ class App extends Component {
   }
 
   render() {
-
-
-    if (!this.state.userLoggedIn) {
-      return (
-        <div className="App">
-          <h1>Groupi3</h1>
-          <Login onUserLoggedIn={this.updateUserLoggedIn} />
-          <Register onUserLoggedIn={this.updateUserLoggedIn} />
-        </div>
-      );
-    }
     return (
       <Router>
-        <div className="App">
-          <h1>Groupi3</h1>
-          <Route path="/" component={EventPage} />
+        <div>
+          {!this.state.userLoggedIn && (
+            <div className="App">
+              <h1>Groupi3</h1>
+              <Login onUserLoggedIn={this.updateUserLoggedIn} />
+              <Register onUserLoggedIn={this.updateUserLoggedIn} />
+            </div>
+          )}
+          {this.state.userLoggedIn && (
+            <div>
+              <h1>Groupi3</h1>
+              <div>
+                <Route path="/" exact component={Homepage} />
+                <Route path="/events" exact component={EventPage} />
+              </div>
+            </div>
+          )}
         </div>
       </Router>
-    );
+    )
   }
 }
 
