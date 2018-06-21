@@ -1,11 +1,20 @@
+<<<<<<< HEAD
 -- DROP DATABASE groupi3db;
 -- CREATE DATABASE groupi3db;
 
 -- \c groupi3db
 
+=======
+
+-- DROP DATABASE groupi3db;
+-- CREATE DATABASE groupi3db;
+
+-- \c groupi3db
+
+>>>>>>> master
 CREATE TABLE users (
     id SERIAL PRIMARY KEY NOT NULL,
-    userName VARCHAR(20),
+    username VARCHAR(20),
     password_digest VARCHAR(255)
 );
 
