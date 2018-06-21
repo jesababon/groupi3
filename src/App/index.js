@@ -1,6 +1,7 @@
 
 import React, { Component } from "react";
 import "./style.css";
+import Homepage from '../HomePage';
 import eventPage from "../eventPage";
 import Login from "../Login";
 import Register from "../Register";
@@ -36,7 +37,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <h1>Groupi3</h1>
-          <Route path="/" component={eventPage} />
+          <Route path="/" component={Homepage} />
         </div>
       </Router>
     );
