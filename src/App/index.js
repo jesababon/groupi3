@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import "./style.css";
 import eventPage from "../eventPage";
@@ -25,20 +26,20 @@ class App extends Component {
     if (!this.state.userLoggedIn) {
       return (
         <div className="App">
-          <h1>NYC Parks</h1>
+          <h1>Groupi3</h1>
           <Login onUserLoggedIn={this.updateUserLoggedIn} />
           <Register onUserLoggedIn={this.updateUserLoggedIn} />
         </div>
       );
-      return (
-        <Router>
-          <div className="App">
-            <h1>Groupi3</h1>
-            <Route path="/" component={eventPage} />
-          </div>
-        </Router>
-      );
     }
+    return (
+      <Router>
+        <div className="App">
+          <h1>Groupi3</h1>
+          <Route path="/" component={eventPage} />
+        </div>
+      </Router>
+    );
   }
 }
 

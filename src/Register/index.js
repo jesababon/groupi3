@@ -22,6 +22,7 @@ class Register extends Component {
   }
 
   onFormSubmit(event) {
+    console.log('register');
     event.preventDefault();
   }
 
