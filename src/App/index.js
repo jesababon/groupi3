@@ -1,11 +1,12 @@
 
 import React, { Component } from "react";
 import "./style.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import EventPage from "../EventPage";
 import Homepage from '../HomePage';
-import eventPage from "../eventPage";
 import Login from "../Login";
 import Register from "../Register";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+
 
 class App extends Component {
   constructor(props) {
@@ -24,6 +25,8 @@ class App extends Component {
   }
 
   render() {
+
+
     if (!this.state.userLoggedIn) {
       return (
         <div className="App">
