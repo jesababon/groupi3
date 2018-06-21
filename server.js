@@ -11,6 +11,7 @@ const Event = require('./models/Event');
 const secret = require('./config.js');
 const bandsintown = require('bandsintown')(secret.key);
 
+
 // Create a new Express application (web server)
 const app = express();
 app.use(jsonParser);

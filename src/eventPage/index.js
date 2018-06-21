@@ -30,7 +30,9 @@ class EventPage extends Component {
                     title={event.title}
                     date={event.formatted_datetime}
                     venue={event.venue.name}
-                    city={event.venue.city}
+                    location={event.formatted_location}
+                    facebook_url={event.facebook_rsvp_url}
+                    ticket_status={event.ticket_status}
                     ticket_link={event.ticket_url} />
           })}
         </div>
