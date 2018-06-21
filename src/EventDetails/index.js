@@ -6,14 +6,12 @@ class EventDetails extends Component {
   render() {
     return (
       <div className="EventDetails">
-      <div className="eventPage">
-        <p><Link to="/eventPage/">{this.props.artist_id}</p>
-        <p>Artist Name: {this.props.artist_name}</p>
-        <p>Date: {this.props.date}</p>
-        <p>Venue: {this.props.venue}</p>
-        <p>Address: {this.props.address}</p>
-        <p>Get Tickets: {this.props.ticket_link}</p>
-      </div>
+          {/* <p><Link to="/eventPage/">{this.props.artist_id} </Link></p> */}
+          <h4>Event Title: {this.props.title}</h4>
+          <p><strong>Date:</strong>  {this.props.date}</p>
+          <p><strong>Venue:</strong> {this.props.venue}</p>
+          <p><strong>City:</strong> {this.props.city}</p>
+          <p><a href={this.props.ticket_link} target="_blank">Get Tickets </a></p>
       </div>
     );
   }
