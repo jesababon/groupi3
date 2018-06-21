@@ -1,19 +1,22 @@
 import React, { Component } from "react";
 import "./style.css";
+// import EventPage from 'eventPage';
 
 const API = '';
 
+
+
 class EventPage extends Component {
 
-<div className="App">Hello World</div>;
+// <div className="SearchTitle">Genre EVENTS IN Location </div>;
 
     constructor(props){
         super(props)
 
         this.state = {
-            name="",
-            date="",
-            location="",
+            name=""
+            date=""
+            location=""
             image=""
         }
     }
