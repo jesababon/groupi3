@@ -1,10 +1,48 @@
 import React, { Component } from "react";
 import "./style.css";
 
+const API = '';
+
 class EventPage extends Component {
-    render() {
-        return <div className="App">Event Page</div>;
+
+    constructor(props){
+        super(props)
+
+        this.state = {
+            name="",
+            date="",
+            location="",
+            image=""
+        }
     }
 }
 
-export default App;
+    componentDidMount () {
+        let id = this.prop.match.params;
+        fetch(API/${id}.json)
+        .then(response => response.json())
+        .then(event => {
+            this.setState({
+                name: event.name,
+                date: event.date,
+                location: event.location,
+                image: event.image
+            });
+        });
+    }
+    
+    render() {
+       return (
+         <div className="eventPage">
+           <Event
+           name={this.state.name}
+           date={this.state.date}
+           location={this.state.location}
+           image={this.state.image} 
+           />
+        </div>
+       );
+    };
+
+
+export default eventPage;
