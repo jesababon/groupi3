@@ -10,14 +10,10 @@ class HomePage extends Component {
   <div className="landingBody">
   <form action="submit" method="get">
   <select class="genreSelect">
-  <option value="rnb">RnB</option>
-  <option value="altRock">Alternative Rock</option>
-  <option value="metal">Metal</option>
-  </select>
-  <select class="locationSelect">
-  <option value="nyc">New York City</option>
-  <option value="sanfran">San Francisco</option>
-  <option value="atlanta">Atlanta</option>
+  <option value="rnb">Rock</option>
+  <option value="altRock">Pop</option>
+  <option value="metal">EDM</option>
+  <option value="metal">Rap</option>
   </select>
   <input type="submit" value="Find Event" />
   </form>

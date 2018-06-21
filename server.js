@@ -7,6 +7,7 @@ const bcrypt = require('bcrypt');
 const User = require('./models/User');
 const jsonParser = bodyParser.json();
 const saltRounds = 10;
+const Event = require('./models/Event');
 
 // Create a new Express application (web server)
 const app = express();
@@ -18,19 +19,25 @@ app.use(session({
   saveUninitialized: true
 }));
 
-
-
 // Set the port based on the environment variable (PORT=8080 node server.js)
 // and fallback to 4567
 const PORT = process.env.PORT || 4567;
 
 app.use('/static', express.static('build/static'));
 
+
 // =================================
 // WRITE ALL ROUTES ABOVE PRODUCTION 
 // ==================================
 
 console.log('hello world');
+
+app.get('/events.json', (request,response) => {
+      Event.all()
+      .then(event => {
+      response.json(event);
+      });
+});
 
 app.post("/register", (request, response) => {    
   console.log('register')
