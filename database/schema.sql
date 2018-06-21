@@ -18,7 +18,7 @@ CREATE TABLE comments (
 CREATE TABLE events (
     id SERIAL PRIMARY KEY NOT NULL,
     artist_id VARCHAR(255) REFERENCES artists(id),
-    date DATE,
+    date VARCHAR (15),
     artist_name VARCHAR(255),
     venue VARCHAR(255),
     address VARCHAR(255),
