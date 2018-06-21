@@ -73,7 +73,7 @@ VALUES
   'Drake', 
   'Madison Sqaure Garden', 
   'New York, NY', 
-  'https://www1.ticketmaster.com/aubrey-the-three-migos-tour-new-york-new-york-08-24-2018/event/3B0054ABD4F51E16?artistid=1319371&majorcatid=10001&minorcatid=3'
+  'https://bit.ly/2lsDykt'
 );
 
 
