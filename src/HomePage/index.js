@@ -8,7 +8,19 @@ class HomePage extends Component {
   <header>Groupi3</header>
   <nav>Username Password Register LogIn</nav>
   <div className="landingBody">
-  <p>Genre Location Search</p>
+  <form action="submit" method="get">
+  <select class="genreSelect">
+  <option value="rnb">RnB</option>
+  <option value="altRock">Alternative Rock</option>
+  <option value="metal">Metal</option>
+  </select>
+  <select class="locationSelect">
+  <option value="nyc">New York City</option>
+  <option value="sanfran">San Francisco</option>
+  <option value="atlanta">Atlanta</option>
+  </select>
+  <input type="submit" value="Find Event" />
+  </form>
   </div>
   <footer>Copyright Group3</footer>
   </div>
