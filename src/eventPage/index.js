@@ -12,7 +12,6 @@ class EventPage extends Component {
           }
       }
   
-
   componentDidMount () {
       fetch('/events.json')
       .then(response => response.json())
@@ -33,6 +32,5 @@ class EventPage extends Component {
        );
     };
 }
-
 
 export default EventPage;
