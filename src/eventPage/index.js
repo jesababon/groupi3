@@ -13,7 +13,7 @@ class EventPage extends Component {
       }
   
   componentDidMount () {
-      fetch('/events.json')
+      fetch('/api-events.json')
       .then(response => response.json())
       .then(events => {
           this.setState({
@@ -26,7 +26,12 @@ class EventPage extends Component {
        return(
          <div className="EventPage">
           {this.state.events.map( event =>{
-            return <EventDetails />
+            return <EventDetails 
+                    title={event.title}
+                    date={event.formatted_datetime}
+                    venue={event.venue.name}
+                    city={event.venue.city}
+                    ticket_link={event.ticket_url} />
           })}
         </div>
        );

@@ -8,8 +8,8 @@ const User = require('./models/User');
 const jsonParser = bodyParser.json();
 const saltRounds = 10;
 const Event = require('./models/Event');
-const bandsintown = require('bandsintown')('a7d373dc7f1102aee9dd483b73dde8d7');
-
+const secret = require('./config.js');
+const bandsintown = require('bandsintown')(secret.key);
 
 // Create a new Express application (web server)
 const app = express();
@@ -86,18 +86,6 @@ app.post("/login", (request, response) => {
       });
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 // =========================================================
 
