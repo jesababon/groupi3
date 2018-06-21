@@ -21,8 +21,24 @@ class Login extends Component {
     this.setState(newState);
   }
 
-  onFormSubmit(event) {
-    event.preventDefault();
+  onFormSubmit(evt) {
+    evt.preventDefault();
+    const body = {
+      username: this.state.username,
+      password: this.state.password,
+    }
+    fetch('/login', {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      /* Necessary to pass the session cookie along with the request */
+      credentials: "same-origin"
+    }).then(response => response.json())
+      .then(user => {
+        this.props.onUserLoggedIn(user)
+      });
   }
 
   render() {
