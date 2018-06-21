@@ -1,7 +1,7 @@
-DROP DATABASE groupi3db;
-CREATE DATABASE groupi3db;
+-- DROP DATABASE groupi3db;
+-- CREATE DATABASE groupi3db;
 
-\c groupi3db
+-- \c groupi3db
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY NOT NULL,
