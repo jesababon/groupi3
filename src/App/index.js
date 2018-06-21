@@ -40,7 +40,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <h1>Groupi3</h1>
-          <Route path="/" component={Homepage} />
+          <Route path="/" component={EventPage} />
         </div>
       </Router>
     );
