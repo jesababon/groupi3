@@ -4,45 +4,56 @@ import EventDetails from '../EventDetails';
 
 class OneEvent extends Component {
 
-     constructor(props){
-          super(props)
+    constructor(props) {
+        super(props)
 
-          this.state = {
-             event_id:0,
-             title: "",
-             formatted_datetime: ""
-          }
-      }
-  
-  componentDidMount () {
-      let id=this.props.match.event_id;
-      fetch(`/api-events/${id}.json`)
-      .then(response => response.json())
-      .then(event => {
-          this.setState({
-              id:event.event_id,
-              title:event.title,
-              formatted_datetime:event.date
-          });
-      });
-  }
+        this.state = {
+            id: 0,
+            title: "",
+            formatted_datetime: "",
+            venue: "",
+            location: "",
+            facebook_rsvp_url: "",
+            ticket_status: "",
+            ticket_url: ""
+        }
+    }
+
+    componentDidMount() {
+        let id = this.props.match.url.replace(/event/i, '')
+        fetch(`/api-events/${id}.json`)
+            .then(response => response.json())
+            .then(event => {
+                console.log(event[0]);
+                this.setState({
+                    id: event[0].id,
+                    title: event[0].title,
+                    formatted_datetime: event[0].formatted_datetime,
+                    venue: event[0].venue.name,
+                    location: event[0].formatted_location,
+                    facebook_rsvp_url: event[0].facebook_rsvp_url,
+                    ticket_status: event[0].ticket_status,
+                    ticket_url: event[0].ticket_url
+                });
+            });
+    }
 
 
- render(){
-       return(
-         <div className="OneEvent">
-             <EventDetails
-                    event_id={this.state.event_id}
+    render() {
+        return (
+            <div className="OneEvent">
+                <EventDetails
+                    event_id={this.state.id}
                     title={this.state.title}
                     date={this.state.formatted_datetime}
-                    // venue={event.venue.name}
-                    // location={event.formatted_location}
-                    // facebook_url={event.facebook_rsvp_url}
-                    // ticket_status={event.ticket_status}
-                    // ticket_link={event.ticket_url} 
-                    />
-        </div>
-       );
+                    venue={this.state.venue}
+                    location={this.state.location}
+                    facebook_url={this.state.facebook_rsvp_url}
+                    ticket_status={this.state.ticket_status}
+                    ticket_link={this.state.ticket_url} 
+                />
+            </div>
+        );
     };
 }
 
