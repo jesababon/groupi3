@@ -6,6 +6,7 @@ import EventPage from "../EventPage";
 import Homepage from '../HomePage';
 import Login from "../Login";
 import Register from "../Register";
+import EventDetails from "../EventDetails";
 
 
 class App extends Component {
@@ -45,6 +46,7 @@ class App extends Component {
               <div>
                 <Route path="/" exact component={Homepage} />
                 <Route path="/events" exact component={EventPage} />
+                <Route path="/details/:id" exact component={EventDetails} />
               </div>
             </div>
           )}

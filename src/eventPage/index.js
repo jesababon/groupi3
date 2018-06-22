@@ -35,7 +35,8 @@ class EventPage extends Component {
                     location={event.formatted_location}
                     facebook_url={event.facebook_rsvp_url}
                     ticket_status={event.ticket_status}
-                    ticket_link={event.ticket_url} />
+                    ticket_link={event.ticket_url} 
+                    />
           })}
         </div>
        );
