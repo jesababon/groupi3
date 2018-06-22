@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
+import CreateComment from "../CreateComment";
 // const Comment = require('../models/Comment');
 
 
@@ -26,12 +27,14 @@ componentDidMount() {
   render() {
     return (
       <div className="comments">
+      <CreateComment />
       {this.state.comments.map(comment => {
         console.log(comment);
         let comments = [comment]
         return (
         <div className="showComments">
         <h3>{comment.content}</h3>
+        
         </div>
         );
       })}

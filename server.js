@@ -48,7 +48,7 @@ app.get('/comments.json', (request, response) => {
   Comment.all()
   .then(comments => {    
      
-    console.log(comments);
+    // console.log(comments);
        
     response.json(comments)
     });
@@ -131,6 +131,15 @@ app.post("/login", (request, response) => {
         request.session.userId = null;
       });
   });
+});
+
+app.get('/comment/:id.json', (request, response) => {
+  const id = request.params.id;
+  console.log(id);
+  Comment.findComment(id)
+    .then(comment => {
+      response.json(comment);
+    });
 });
 
 app.post('/comments', (request, response) => {
