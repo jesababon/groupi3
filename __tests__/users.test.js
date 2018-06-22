@@ -19,3 +19,9 @@ describe('getId(url)', () => {
   })
 })
 
+describe('getEventId(params', () => {
+  test('should return an 8 digit parameter as NaN', () => {
+    let id = helper.getEventId('16653435')
+    expect(id).toBe(NaN)
+  })
+})

@@ -5,4 +5,10 @@ const getId = function (url) {
   return id
 }
 
+  const getEventId = function (params) {
+    let event_id = Number(params.id);
+    return event_id
+  }
+
 module.exports.getId = getId;
+module.exports.getEventId = getEventId;

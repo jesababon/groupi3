@@ -23,7 +23,6 @@ class OneEvent extends Component {
     componentDidMount() {
         let url = this.props.match.url;
         let id = helper.getId(url) 
-        // let id = this.props.match.url.replace(/event/i, '')
         fetch(`/api-events/${id}.json`)
             .then(response => response.json())
             .then(event => {
