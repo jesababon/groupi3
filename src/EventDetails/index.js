@@ -33,7 +33,6 @@ class EventDetails extends Component {
     return (
       <div className="EventDetails">
           <h4>{this.props.title}</h4>
-          
           <p className="eventID"><strong>Event ID:</strong>{this.props.event_id}</p>
           <p><strong>Date:</strong>  {this.props.date}</p>
           <p><strong>Venue:</strong> {this.props.venue}</p>
