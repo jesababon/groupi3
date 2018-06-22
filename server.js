@@ -50,6 +50,19 @@ app.get('/api-events.json', (request, response) => {
     });
 });
 
+app.get('/api-events/:id.json', (request, response) => {
+  const id = Number(request.params.id);
+  bandsintown
+    .getArtistEventList('Skrillex')
+    .then(events => {
+        event = events.filter(event => {
+        return event.id === id
+      })
+      response.json(event);
+      
+    });
+});
+
 app.post("/register", (request, response) => {    
   console.log('register')
   const password = request.body.password; 
