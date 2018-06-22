@@ -54,6 +54,19 @@ app.get('/comments.json', (request, response) => {
     });
   });
 
+app.post('/api-events.json', (request, response) => {
+  const search = {
+    search: request.body.search,
+  }
+  bandsintown
+    .getArtistEventList(search.search)
+    .then(events => {
+      console.log(events);
+      response.json(events);
+    });
+
+});
+
 app.get('/api-events.json', (request, response) => {
   bandsintown
     .getArtistEventList('Skrillex')
