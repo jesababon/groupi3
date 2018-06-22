@@ -30,23 +30,27 @@ class App extends Component {
 
   render() {
     return (
+
       <Router>
         <div>
+          <div className= "title">
+          Groupi3
+          </div>
           {!this.state.userLoggedIn && (
             <div className="App">
-              <h1>Groupi3</h1>
               <Login onUserLoggedIn={this.updateUserLoggedIn} />
               <Register onUserLoggedIn={this.updateUserLoggedIn} />
             </div>
           )}
           {this.state.userLoggedIn && (
-            <div>
-              <h1>Groupi3</h1>
+            <div className="container">
+              <h2>Groupi3</h2>
               <div>
                 <Route path="/" exact component={Homepage} />
                 <Route path="/events" exact component={EventPage} />
               </div>
             </div>
+            
           )}
         </div>
       </Router>
