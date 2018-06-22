@@ -41,6 +41,13 @@ console.log('hello world');
 //       });
 // });
 
+app.get('/comments.json', (request, response) => {
+  Comment.all()
+  .then(data => {
+    response.json(data);
+  })
+})
+
 app.get('/api-events.json', (request, response) => {
   bandsintown
     .getArtistEventList('Skrillex')

@@ -77,3 +77,9 @@ VALUES
 );
 
 
+INSERT INTO comments (user_id, content)
+VALUES 
+(1, 'Cool artist'),
+(2, 'Great artist'),
+(3, 'Boring artist'),
+(4, 'Awesome artist');
