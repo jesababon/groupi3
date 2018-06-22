@@ -8,8 +8,8 @@ class HomePage extends Component {
       <div className="container">
         <header>Groupi3</header>
         <nav>
-          <span>Username Password Register LogIn</span>
-          <Link to="/events">Events</Link>
+          <span>Register LogIn</span>
+          <Link to="/events">See All Events</Link>
         </nav>
         <div className="landingBody">
           <form action="submit" method="get">
