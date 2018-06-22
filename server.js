@@ -54,26 +54,37 @@ app.get('/comments.json', (request, response) => {
     });
   });
 
-app.get('/api-events.json', (request, response) => {
+const searchArr = []
+
+app.post('/api-events.json', (request, response) => {
+  const search = {
+    search: request.body.search,
+  }
+  searchArr.push(search.search)
   bandsintown
-    .getArtistEventList('Skrillex')
+    .getArtistEventList(search.search)
     .then(events => {
       console.log(events);
       response.json(events);
     });
 });
 
+app.get('/api-events.json', (request, response) => {
+  console.log(searchArr);
+  
+  bandsintown
+    .getArtistEventList(searchArr[0])
+    .then(events => {
+      response.json(events);
+    });
+});
+
 app.get('/api-events/:id.json', (request, response) => {
-  // const getEventId = function () {
-  //   let event_id = Number(request.params.id);
-  //   return event_id
-  // }
  let params = request.params
  let id = helper.getEventId(params)
  console.log(id);
- 
   bandsintown
-    .getArtistEventList('Skrillex')
+    .getArtistEventList(searchArr)
     .then(events => {
         event = events.filter(event => {
         return event.id === id

@@ -1,28 +1,68 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router'
 import { Link } from "react-router-dom";
 import "./style.css";
 
 class HomePage extends Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      submitted: false,
+    }
+    this.onFormChange = this.onFormChange.bind(this);
+    this.onFormSubmit = this.onFormSubmit.bind(this);
+  }
+
+  onFormChange(event) {
+    const element = event.target;
+    const name = element.name;
+    const value = element.value;
+    const newState = {};
+    newState[name] = value;
+    this.setState(newState)
+  }
+
+  onFormSubmit(event) {
+    event.preventDefault();
+    const search = {
+      search: this.state.search,
+    }
+
+    fetch('/api-events.json', {
+      method: "POST",
+      body: JSON.stringify(search),
+      headers: {
+        "Content-type": "application/json"
+      }
+    }).then(response => response.json())
+      .then(search => {
+        this.setState({
+          submitted: true,
+        });
+      });
+  }
+
   render() {
+    if (this.state.submitted === true) {
+      return <Redirect to="/events" />;
+    }
+
     return (
       <div className="container">
         <header>Groupi3</header>
         <nav>
-          <span>Username Password Register LogIn</span>
-          <Link to="/events">Events</Link>
+          <span>Register LogIn</span>
+          <Link to="/events">See All Events</Link>
         </nav>
         <div className="landingBody">
-          <form action="submit" method="get">
-            <select class="genreSelect">
-              <option value="rnb">Rock</option>
-              <option value="altRock">Pop</option>
-              <option value="metal">EDM</option>
-              <option value="metal">Rap</option>
-            </select>
-            <input type="submit" value="Find Event" />
+          <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
+            <p>Enter an Artist Name to see their events</p>
+            <input type="text" name='search'/>
+            <button type="submit">Find Events</button>
           </form>
         </div>
-
         <footer>Copyright Group3</footer>
       </div>
     );

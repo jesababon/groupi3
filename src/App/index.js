@@ -39,13 +39,13 @@ class App extends Component {
           <div className= "title">
           Groupi3
           </div>
-          {!this.state.userLoggedIn && (
+          {this.state.userLoggedIn && (
             <div className="App">
               <Login onUserLoggedIn={this.updateUserLoggedIn} />
               <Register onUserLoggedIn={this.updateUserLoggedIn} />
             </div>
           )}
-          {this.state.userLoggedIn && (
+          {!this.state.userLoggedIn && (
             <div className="container">
               <h2>Groupi3</h2>
               <div>
