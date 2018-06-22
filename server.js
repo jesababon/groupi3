@@ -113,6 +113,15 @@ app.post("/login", (request, response) => {
   });
 });
 
+app.post('/comments', (request, response) => {
+  const newComment = {
+    content: request.body.content
+  };
+  Comment.create(newComment).then(comment =>{
+    response.json(newComment);
+  })
+})
+
 // =========================================================
 
 

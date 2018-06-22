@@ -2,6 +2,10 @@ const db = require('../database/connection');
 
 const Comment = {};
 
+Comment.create=(newComment) => {
+  return db.one('INSERT into comments (content) VALUES ($<content>) RETURNING *', newComment);
+}
+
 Comment.all = function () {
   return db.any("SELECT * FROM comments;");
 }
