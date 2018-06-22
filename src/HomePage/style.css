@@ -5,14 +5,15 @@ body{
 .container{
     display: grid;
     max-height: 100%;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1fr .5fr auto .5fr;
-    grid-template-areas:
-    "h h h h h h h h h h h h"
-    "n n n n n n n n n n n n"
-    "l l l l l l l l l l l l"
-    "f f f f f f f f f f f f";
+    grid-template-columns: 150px auto 150px;
+    grid-template-rows: repeat(3, 100px);
+}
 
+header,
+nav,
+.landingBody,
+footer {
+    background: rgb(146, 143, 151);
 }
 
 header{
@@ -28,7 +29,7 @@ nav{
 .landingBody{
     grid-area: l;
     border: 2px purple solid;
-    background-color: rgb(146, 143, 151);
+    /* background-color: rgb(146, 143, 151); */
     padding: 40%;
 }
 

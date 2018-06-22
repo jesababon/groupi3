@@ -19,6 +19,7 @@ body{
 div.title {
     color: rgb(255, 208, 0);
     font-size: 6em;
+    font-family: 'Poor Story', Hind;
 }
 
 header {
@@ -28,6 +29,14 @@ header {
 }
 
 h2 {
-    border-color: darkgray
+    border-color: darkgray;
+    font-family: 'Oxygen', sans-serif;
 }
+
+p {
+    
+    font-family: 'Oxygen', sans-serif;
+
+}
+
 
