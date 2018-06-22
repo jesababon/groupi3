@@ -58,13 +58,15 @@ app.get('/api-events.json', (request, response) => {
 });
 
 app.get('/api-events/:id.json', (request, response) => {
-  const id = request.params.id;
+  const id = Number(request.params.id);
   bandsintown
     .getArtistEventList('Skrillex')
-    .then(event => {
-      if (id === event.id) {
+    .then(events => {
+        event = events.filter(event => {
+        return event.id === id
+      })
       response.json(event);
-      }
+      
     });
 });
 
