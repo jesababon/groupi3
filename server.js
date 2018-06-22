@@ -8,6 +8,7 @@ const User = require('./models/User');
 const jsonParser = bodyParser.json();
 const saltRounds = 10;
 const Event = require('./models/Event');
+const Comment = require('./models/Comment');
 const secret = require('./config.js');
 const bandsintown = require('bandsintown')(secret.key);
 const cookieParser = require('cookie-parser');
@@ -40,6 +41,16 @@ console.log('hello world');
 //       response.json(event);
 //       });
 // });
+
+app.get('/comments.json', (request, response) => {
+  Comment.all()
+  .then(comments => {    
+     
+    console.log(comments);
+       
+    response.json(comments)
+    });
+  });
 
 app.get('/api-events.json', (request, response) => {
   bandsintown
