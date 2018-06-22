@@ -25,12 +25,16 @@ class EventPage extends Component {
  render(){
        return(
          <div className="EventPage">
-          {this.state.events.map( event =>{
+          {this.state.events.map( (event, index) =>{
             return <EventDetails 
+                    id={index}
+                    event_id={event.id}
                     title={event.title}
                     date={event.formatted_datetime}
                     venue={event.venue.name}
-                    city={event.venue.city}
+                    location={event.formatted_location}
+                    facebook_url={event.facebook_rsvp_url}
+                    ticket_status={event.ticket_status}
                     ticket_link={event.ticket_url} />
           })}
         </div>

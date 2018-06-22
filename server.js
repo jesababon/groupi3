@@ -10,6 +10,7 @@ const saltRounds = 10;
 const Event = require('./models/Event');
 const secret = require('./config.js');
 const bandsintown = require('bandsintown')(secret.key);
+const cookieParser = require('cookie-parser');
 
 // Create a new Express application (web server)
 const app = express();
@@ -27,19 +28,18 @@ const PORT = process.env.PORT || 4567;
 
 app.use('/static', express.static('build/static'));
 
-
 // =================================
 // WRITE ALL ROUTES ABOVE PRODUCTION 
 // ==================================
 
 console.log('hello world');
 
-app.get('/events.json', (request,response) => {
-      Event.all()
-      .then(event => {
-      response.json(event);
-      });
-});
+// app.get('/events.json', (request,response) => {
+//       Event.all()
+//       .then(event => {
+//       response.json(event);
+//       });
+// });
 
 app.get('/api-events.json', (request, response) => {
   bandsintown
@@ -66,11 +66,13 @@ app.post("/register", (request, response) => {
     .then(user => {
       request.session.loggedIn = true;
       request.session.userId = user.id;
+      
       response.json(user);
     });
 });
 
 app.post("/login", (request, response) => {
+
   User.findByUsername(request.body.username).then(user => {
     return bcrypt
       .compare(request.body.password, user.password_digest)
