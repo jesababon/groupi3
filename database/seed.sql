@@ -77,9 +77,13 @@ VALUES
 );
 
 
+INSERT INTO users (username, password_digest)
+VALUES 
+('jes', 'test');
+
 INSERT INTO comments (user_id, content)
 VALUES 
 (1, 'Cool artist'),
-(2, 'Great artist'),
-(3, 'Boring artist'),
-(4, 'Awesome artist');
+(1, 'Great artist'),
+(1, 'Boring artist'),
+(1, 'Awesome artist');
