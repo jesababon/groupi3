@@ -58,6 +58,7 @@ class HomePage extends Component {
         </nav>
         <div className="landingBody">
           <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
+            <p>Enter an Artist Name to see their events</p>
             <input type="text" name='search'/>
             <button type="submit">Find Events</button>
           </form>
