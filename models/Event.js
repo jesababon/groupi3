@@ -10,5 +10,4 @@ Event.find = id => {
     return db.one("SELECT * FROM events WHERE id =$<id>", { id: id});
 };
 
-
 module.exports = Event;

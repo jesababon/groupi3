@@ -12,6 +12,8 @@ const Comment = require('./models/Comment');
 const secret = require('./config.js');
 const bandsintown = require('bandsintown')(secret.key);
 const cookieParser = require('cookie-parser');
+const helper = require('./src/helpers/helper')
+
 
 // Create a new Express application (web server)
 const app = express();
@@ -62,7 +64,14 @@ app.get('/api-events.json', (request, response) => {
 });
 
 app.get('/api-events/:id.json', (request, response) => {
-  const id = Number(request.params.id);
+  // const getEventId = function () {
+  //   let event_id = Number(request.params.id);
+  //   return event_id
+  // }
+ let params = request.params
+ let id = helper.getEventId(params)
+ console.log(id);
+ 
   bandsintown
     .getArtistEventList('Skrillex')
     .then(events => {
