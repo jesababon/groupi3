@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
+// const Comment = require('../models/Comment');
+
 
 class Comments extends Component {
 constructor(props) {
@@ -25,8 +27,13 @@ componentDidMount() {
     return (
       <div className="comments">
       {this.state.comments.map(comment => {
+        console.log(comment);
         let comments = [comment]
-        return <h3>{comment.content}</h3>
+        return (
+        <div className="showComments">
+        <h3>{comment.content}</h3>
+        </div>
+        );
       })}
       </div>
     );
