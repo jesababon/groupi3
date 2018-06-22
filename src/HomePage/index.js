@@ -6,9 +6,8 @@ class HomePage extends Component {
   render() {
     return (
       <div className="container">
-        <header>Groupi3</header>
         <nav>
-          <span>Username Password Register LogIn</span>
+          <span className="eventRegister">Username Password Register LogIn</span>
           <Link to="/events">Events</Link>
         </nav>
         <div className="landingBody">
@@ -23,7 +22,7 @@ class HomePage extends Component {
           </form>
         </div>
 
-        <footer>Copyright Group3</footer>
+        <footer>Copyright Groupi3</footer>
       </div>
     );
   }
