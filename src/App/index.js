@@ -6,7 +6,7 @@ import EventPage from "../EventPage";
 import Homepage from '../HomePage';
 import Login from "../Login";
 import Register from "../Register";
-import EventDetails from "../EventDetails";
+import OneEvent from "../OneEvent";
 
 
 class App extends Component {
@@ -33,20 +33,20 @@ class App extends Component {
     return (
       <Router>
         <div>
-          {!this.state.userLoggedIn && (
+          {this.state.userLoggedIn && (
             <div className="App">
               <h1>Groupi3</h1>
               <Login onUserLoggedIn={this.updateUserLoggedIn} />
               <Register onUserLoggedIn={this.updateUserLoggedIn} />
             </div>
           )}
-          {this.state.userLoggedIn && (
+          {!this.state.userLoggedIn && (
             <div>
               <h1>Groupi3</h1>
               <div>
                 <Route path="/" exact component={Homepage} />
                 <Route path="/events" exact component={EventPage} />
-                <Route path="/details/:id" exact component={EventDetails} />
+                <Route path="/event/:id" exact component={OneEvent} />
               </div>
             </div>
           )}
