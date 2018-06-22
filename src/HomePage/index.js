@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router'
 import { Link } from "react-router-dom";
 import "./style.css";
 
@@ -44,6 +45,10 @@ class HomePage extends Component {
   }
 
   render() {
+    if (this.state.submitted === true) {
+      return <Redirect to="/events" />;
+    }
+
     return (
       <div className="container">
         <header>Groupi3</header>
@@ -57,7 +62,6 @@ class HomePage extends Component {
             <button type="submit">Find Events</button>
           </form>
         </div>
-
         <footer>Copyright Group3</footer>
       </div>
     );
