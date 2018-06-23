@@ -10,6 +10,7 @@ import OneEvent from "../OneEvent";
 import Comments from "../Comments";
 import CreateComment from "../CreateComment";
 import OneComment from "../OneComment";
+import UpdateComment from "../UpdateComment";
 
 
 class App extends Component {
@@ -55,6 +56,7 @@ class App extends Component {
                 <Route path="/comments" exact component={Comments} />
                 <Route path="/create-comment" exact component={CreateComment} />
                 <Route path="/comment/:id" exact component={OneComment} />
+                <Route path="/update-comment/:id" exact component={UpdateComment} />
               </div>
             </div>
             
