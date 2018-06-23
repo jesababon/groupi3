@@ -50,7 +50,6 @@ class CreateComment extends Component{
     }
     return (
       <div className="CreateComment">
-        <h1>Create New Comment</h1>
         <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
           <p>
             <label for="content">Content</label>
