@@ -18,6 +18,11 @@ Comment.findComment = id => {
 return db.one('SELECT * FROM comments WHERE id =$<id>', {id: id});
 };
 
+Comment.update = (updateComment) => {
+  return db.none(`UPDATE comments SET
+  content=$<content> WHERE id=$<id>`, updateComment);
+}
+
 Comment.delete= id =>{
 return db.result('DELETE from comments WHERE id=$1', [id]);
 } 
