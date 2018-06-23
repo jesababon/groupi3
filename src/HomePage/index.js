@@ -51,8 +51,8 @@ class HomePage extends Component {
 
     return (
       <div className="container">
-        <header>Groupi3</header>
         <nav>
+          <span className="eventRegister">Register LogIn</span>
           <span>Register LogIn</span>
           <Link to="/events">See All Events</Link>
         </nav>

@@ -47,7 +47,6 @@ class App extends Component {
           )}
           {!this.state.userLoggedIn && (
             <div className="container">
-              <h2>Groupi3</h2>
               <div>
                 <Route path="/" exact component={Homepage} />
                 <Route path="/events" exact component={EventPage} />
