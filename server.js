@@ -8,9 +8,12 @@ const User = require('./models/User');
 const jsonParser = bodyParser.json();
 const saltRounds = 10;
 const Event = require('./models/Event');
+const Comment = require('./models/Comment');
 const secret = require('./config.js');
 const bandsintown = require('bandsintown')(secret.key);
 const cookieParser = require('cookie-parser');
+const helper = require('./src/helpers/helper')
+
 
 // Create a new Express application (web server)
 const app = express();
@@ -41,19 +44,47 @@ console.log('hello world');
 //       });
 // });
 
-app.get('/api-events.json', (request, response) => {
+app.get('/comments.json', (request, response) => {
+  Comment.all()
+  .then(comments => {    
+     
+    console.log(comments);
+       
+    response.json(comments)
+    });
+  });
+
+const searchArr = []
+
+app.post('/api-events.json', (request, response) => {
+  const search = {
+    search: request.body.search,
+  }
+  searchArr.push(search.search)
   bandsintown
-    .getArtistEventList('Skrillex')
+    .getArtistEventList(search.search)
     .then(events => {
       console.log(events);
       response.json(events);
     });
 });
 
-app.get('/api-events/:id.json', (request, response) => {
-  const id = Number(request.params.id);
+app.get('/api-events.json', (request, response) => {
+  console.log(searchArr);
+  
   bandsintown
-    .getArtistEventList('Skrillex')
+    .getArtistEventList(searchArr[0])
+    .then(events => {
+      response.json(events);
+    });
+});
+
+app.get('/api-events/:id.json', (request, response) => {
+ let params = request.params
+ let id = helper.getEventId(params)
+ console.log(id);
+  bandsintown
+    .getArtistEventList(searchArr)
     .then(events => {
         event = events.filter(event => {
         return event.id === id
@@ -101,6 +132,15 @@ app.post("/login", (request, response) => {
       });
   });
 });
+
+app.post('/comments', (request, response) => {
+  const newComment = {
+    content: request.body.content
+  };
+  Comment.create(newComment).then(comment =>{
+    response.json(newComment);
+  })
+})
 
 // =========================================================
 

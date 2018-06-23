@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import "./style.css";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-
 class EventDetails extends Component {
   //   constructor(props) {
   //   super(props);

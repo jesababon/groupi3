@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./style.css";
-import EventDetails from '../EventDetails';
+import EventDetail from '../EventDetail';
+
+const helper = require('../helpers/helper')
 
 class OneEvent extends Component {
 
@@ -20,7 +22,8 @@ class OneEvent extends Component {
     }
 
     componentDidMount() {
-        let id = this.props.match.url.replace(/event/i, '')
+        let url = this.props.match.url;
+        let id = helper.getId(url) 
         fetch(`/api-events/${id}.json`)
             .then(response => response.json())
             .then(event => {
@@ -42,7 +45,7 @@ class OneEvent extends Component {
     render() {
         return (
             <div className="OneEvent">
-                <EventDetails
+                <EventDetail
                     event_id={this.state.id}
                     title={this.state.title}
                     date={this.state.formatted_datetime}

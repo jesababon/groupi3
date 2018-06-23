@@ -23,7 +23,7 @@ class EventPage extends Component {
   }
 
  render(){
-       return(
+       return(     
          <div className="EventPage">
           {this.state.events.map( (event, index) =>{
             return <EventDetails 
