@@ -51,12 +51,12 @@ class CreateComment extends Component{
       <div className="CreateComment">
         <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
           <p>
-            <label for="content">New Comment?</label>
+            <label for="content">Content</label>
             <input
               type="text"
               name="content"
-              placeholder="content"
-              value="Say something nice."
+              placeholder="Say something nice"
+              value={this.state.content}
             />
           </p>
           <p>
