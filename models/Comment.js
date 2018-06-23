@@ -23,8 +23,8 @@ Comment.update = (updateComment) => {
   content=$<content> WHERE id=$<id>`, updateComment);
 }
 
-Comment.delete= id =>{
-return db.result('DELETE from comments WHERE id=$1', [id]);
-} 
+Comment.delete= (deleteComment) =>{
+return db.result(`DELETE from comments WHERE id=$<id>`, deleteComment);
+}
 
 module.exports = Comment;
