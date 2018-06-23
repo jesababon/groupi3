@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import "./style.css";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
@@ -11,6 +10,7 @@ import Comments from "../Comments";
 import CreateComment from "../CreateComment";
 import OneComment from "../OneComment";
 import UpdateComment from "../UpdateComment";
+import DeleteComment from "../DeleteComment";
 
 
 class App extends Component {
@@ -57,6 +57,7 @@ class App extends Component {
                 <Route path="/create-comment" exact component={CreateComment} />
                 <Route path="/comment/:id" exact component={OneComment} />
                 <Route path="/update-comment/:id" exact component={UpdateComment} />
+                <Route path="/delete-comment/:id" exact component={DeleteComment} />
               </div>
             </div>
             

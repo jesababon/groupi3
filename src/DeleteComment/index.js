@@ -17,7 +17,7 @@ class DeleteComment extends Component{
 
     componentDidMount() {
       let url = this.props.match.url;
-      let num = url.replace(/update-comment/i, '')
+      let num = url.replace(/delete-comment/i, '')
       let id = num.replace(/\//g, '')
       console.log(id);
       fetch(`/comment/${id}.json`)
