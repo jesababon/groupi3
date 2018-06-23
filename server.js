@@ -162,6 +162,17 @@ app.put('/comment/:id.json', (request, response) => {
   });
 });
 
+app.delete('/comment/:id.json', (request, response)=>{
+  const id= request.params.id;
+  // const deleteComment ={
+  //   id: Number(request.body.id),
+  //   content: request.body.content
+  // };
+  Comment.delete(id).then(()=>{
+    response.json({status:"ok"})
+  });
+});
+
 // =========================================================
 
 
