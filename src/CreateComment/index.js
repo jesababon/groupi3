@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import "./style.css";
 
 class CreateComment extends Component{
@@ -46,7 +45,7 @@ class CreateComment extends Component{
   render() {
     //
     if (this.state.created === true) {
-      return <Redirect to="/comments" />;
+      return window.location.reload();
     }
     return (
       <div className="CreateComment">
