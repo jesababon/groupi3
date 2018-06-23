@@ -3,7 +3,7 @@ import React, {
 } from "react";
 import "./style.css";
 import Comments from '../Comments';
-const helper = require('../helpers/helper')
+
 class OneComment extends Component {
   constructor(props) {
     super(props)
@@ -12,6 +12,7 @@ class OneComment extends Component {
       content: ""
     }
   }
+
   componentDidMount() {
     let url = this.props.match.url
     let num = url.replace(/comment/i, '') 
@@ -38,4 +39,5 @@ class OneComment extends Component {
     );
   };
 }
+
 export default OneComment;

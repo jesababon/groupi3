@@ -154,6 +154,7 @@ app.post('/comments', (request, response) => {
 app.put('/comment/:id.json', (request, response) => {
   const id = request.params.id;
   const updateComment = {
+    id: request.body.id,
     content: request.body.content
   };
   Comment.update(updateComment).then(()=>{

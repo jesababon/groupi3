@@ -61,7 +61,7 @@ class CreateComment extends Component{
             />
           </p>
           <p>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Add Comment"/>
           </p>
         </form>
       </div>

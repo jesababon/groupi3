@@ -10,7 +10,7 @@ import OneEvent from "../OneEvent";
 import Comments from "../Comments";
 import CreateComment from "../CreateComment";
 import OneComment from "../OneComment";
-import UpdateComment from "../OneComment";
+import UpdateComment from "../UpdateComment";
 
 
 class App extends Component {
