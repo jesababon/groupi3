@@ -3,19 +3,6 @@ body{
     background: rgb(90, 9, 90);
 }
 
-.container {
-    border: 4px rgb(255, 208, 0);
-    display: grid;
-    max-height: 100%;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 1fr .5fr auto .5fr;
-    grid-template-areas:
-    "h h h h h h h h h h h h           "
-    "n n n n n n n n n n n n"
-    "l l l l l l l l l l l l"
-    "f f f f f f f f f f f f";
- } 
-
 div.title {
     color: rgb(255, 208, 0);
     font-size: 6em;
@@ -23,7 +10,6 @@ div.title {
 }
 
 header {
-    grid-area: n;
     text-align: center;
     border: 2px black solid;
 }
