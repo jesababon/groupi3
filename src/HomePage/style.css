@@ -20,13 +20,7 @@ body{
 }
 
 
-/* nav,
-header,
-.landingBody,
-footer,div.container
-{
-    background-color: rgb(146, 143, 151);
-} */
+
 
 header, footer {
     border: 2em blue;
