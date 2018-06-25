@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component, Link } from "react";
 import "./style.css";
 import CreateComment from "../CreateComment";
-// const Comment = require('../models/Comment');
-
+import UpdateComment from "../UpdateComment";
+import DeleteComment from "../DeleteComment";
 
 class Comments extends Component {
 constructor(props) {
@@ -29,12 +29,19 @@ componentDidMount() {
       <div className="comments">
       <CreateComment />
       {this.state.comments.map(comment => {
-        console.log(comment);
-        let comments = [comment]
+        let comments = [comment];
         return (
         <div className="showComments">
-        <h3>{comment.content}</h3>
-        
+        <p>ID {comment.id} {comment.content}
+        <UpdateComment 
+        id={comment.id}
+        content={comment.content}
+        />
+        <DeleteComment
+        id={comment.id}
+        content={comment.content}
+        />
+        </p>
         </div>
         );
       })}

@@ -7,7 +7,6 @@ class DeleteComment extends Component{
       super(props)
     
       this.state = {
-        id: 0,
         content: "",
         deleted: false
       }
@@ -15,21 +14,21 @@ class DeleteComment extends Component{
     this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
-    componentDidMount() {
-      let url = this.props.match.url;
-      let num = url.replace(/delete-comment/i, '')
-      let id = num.replace(/\//g, '')
-      console.log(id);
-      fetch(`/comment/${id}.json`)
-        .then(response => response.json())
-        .then(comment => {
-          console.log(comment);
-          this.setState({
-            id: comment.id,
-            content: comment.content
-          });
-        });
-    }
+    // componentDidMount() {
+    //   let id = this.props.match.params.id;
+    //   // let num = url.replace(/delete-comment/i, '')
+    //   // let id = num.replace(/\//g, '')
+    //   console.log(id);
+    //   fetch(`/comment/${id}.json`)
+    //     .then(response => response.json())
+    //     .then(comment => {
+    //       console.log(comment);
+    //       this.setState({
+    //         id: comment.id,
+    //         content: comment.content
+    //       });
+    //     });
+    // }
 
      onFormChange(evt) {
     const element = evt.target;
@@ -43,7 +42,7 @@ class DeleteComment extends Component{
   onFormSubmit(evt) {
     evt.preventDefault();
     const deleteComment = {
-      id: this.state.id,
+      id: this.props.id,
       content: this.state.content
     }
     fetch(`/comment/${this.state.id}.json`, {
@@ -63,24 +62,26 @@ class DeleteComment extends Component{
   render() {
     //
     if (this.state.deleted === true) {
-      return <Redirect to="/comments" />;
+      return window.location.reload();
     }
     return (
       <div className="DeleteComment">
         <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
-          <p>
-            <label for="content">Content</label>
+            <p class="hidden">
+            <label for="content">
+            <p>Delete?</p>
+            </label>
             <input
               type="text"
-              name="content"
-              placeholder="content"
-              value={this.state.content}
+              name="DELETE"
+              placeholder = {this.props.content}
+              value={this.props.id}
             />
-          </p>
+            </p>
           <p>
-            <input type="submit" value="Delete" />
-          </p>
-        </form>
+            <button class="deleteButton" action="submit" name='DELETE' value={this.props.id}>DELETE</button>
+          </p>        
+          </form>
       </div>
     );
   }

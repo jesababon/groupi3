@@ -1,5 +1,3 @@
-
-
 const getId = function (url) {
   let id = url.replace(/event/i, '')
   return id
@@ -10,5 +8,7 @@ const getId = function (url) {
     return event_id
   }
 
+
 module.exports.getId = getId;
 module.exports.getEventId = getEventId;
+

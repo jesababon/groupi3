@@ -14,9 +14,9 @@ class OneComment extends Component {
   }
 
   componentDidMount() {
-    let url = this.props.match.url
-    let num = url.replace(/comment/i, '') 
-    let id = num.replace(/\//g,'')     
+    let id = this.props.match.params.id
+    // let num = url.replace(/comment/i, '') 
+    // let id = num.replace(/\//g,'')     
     console.log(id);
     fetch(`/comment/${id}.json`)
       .then(response => response.json())
@@ -32,9 +32,8 @@ class OneComment extends Component {
   render() {
     return ( 
     <div className = "OneComment">
-{this.state.id}
-{this.state.content}
-
+    <h3>Comment ID: {this.state.id}</h3>
+    {this.state.content}
       </div>
     );
   };
