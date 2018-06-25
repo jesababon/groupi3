@@ -9,6 +9,12 @@ const getId = function (url) {
   }
 
 
+const clearArray = function (array) {
+  return array = [];
+}
+
+
 module.exports.getId = getId;
 module.exports.getEventId = getEventId;
+module.exports.clearArray = clearArray;
 

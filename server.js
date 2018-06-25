@@ -65,7 +65,7 @@ app.post('/api-events.json', (request, response) => {
   bandsintown
     .getArtistEventList(search.search)
     .then(events => {
-      console.log(events);
+      // console.log(events);
       response.json(events);
     });
 });
