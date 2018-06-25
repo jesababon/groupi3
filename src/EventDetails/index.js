@@ -3,7 +3,7 @@ import "./style.css";
 class EventDetails extends Component {
   render() {
     return (
-      <div className="EventDetails">
+      <div className="EventDetails" key={"oneEvent"}>
           <h4>{this.props.title}</h4>
           <p className="eventID"><strong>Event ID:</strong>{this.props.event_id}</p>
           <p><strong>Date:</strong>  {this.props.date}</p>

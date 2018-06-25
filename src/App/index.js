@@ -11,6 +11,7 @@ import CreateComment from "../CreateComment";
 import OneComment from "../OneComment";
 import UpdateComment from "../UpdateComment";
 import DeleteComment from "../DeleteComment";
+import Search from "../Search";
 
 
 class App extends Component {
@@ -38,9 +39,12 @@ class App extends Component {
 
       <Router>
         <div>
-          <div className= "title">
-          Groupi3
-          </div>
+          <nav className="navigation">
+          <header>
+            <h1 className="title">Groupi3</h1>
+            <Search />
+          </header>
+          </nav>
           {this.state.userLoggedIn && (
             <div className="App">
               <Login onUserLoggedIn={this.updateUserLoggedIn} />
@@ -60,7 +64,6 @@ class App extends Component {
                 <Route path="/delete-comment/:id" exact component={DeleteComment} />
               </div>
             </div>
-            
           )}
         </div>
       </Router>
