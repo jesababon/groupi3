@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import EventPage from "../EventPage";
 import Homepage from '../HomePage';
 import Login from "../Login";

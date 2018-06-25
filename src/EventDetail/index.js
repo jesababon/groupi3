@@ -15,9 +15,9 @@ class EventDetail extends Component {
         <p><strong>Location:</strong> {this.props.location}</p>
         <p><a href={this.props.facebook_url} target="_blank">RSVP on Facebook</a></p>
         <p><span>Tickets are {this.props.ticket_status} </span><a href={this.props.ticket_link} target="_blank">Get Tickets </a></p>
-        {/* <div className="commentDiv">
+        <div className="commentDiv">
         <Comments/>
-        </div> */}
+        </div>
       </div>
     );
   }

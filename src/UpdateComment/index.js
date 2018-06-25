@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import OneComment from "../OneComment"
 import "./style.css";
 
 class UpdateComment extends Component{
