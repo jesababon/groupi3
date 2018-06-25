@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "animate.css": "^3.6.1",
     "bandsintown": "^1.0.1",
     "bcrypt": "^2.0.1",
     "bluebird": "^3.5.1",
