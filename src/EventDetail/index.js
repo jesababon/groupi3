@@ -1,7 +1,6 @@
 
 import React, { Component } from "react";
 import "./style.css";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Comments from "../Comments";
 
 class EventDetail extends Component {

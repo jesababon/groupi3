@@ -31,7 +31,7 @@ componentDidMount() {
       {this.state.comments.map(comment => {
         return (
         <div className="showComments">
-        <p>ID {comment.id} {comment.content}
+        ID {comment.id} {comment.content}
         <UpdateComment 
         id={comment.id}
         content={comment.content}
@@ -40,7 +40,6 @@ componentDidMount() {
         id={comment.id}
         content={comment.content}
         />
-        </p>
         </div>
         );
       })}

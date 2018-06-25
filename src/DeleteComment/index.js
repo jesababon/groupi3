@@ -49,19 +49,19 @@ class DeleteComment extends Component{
     return (
       <div className="DeleteComment">
         <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
-            <p class="hidden">
-            <label for="content">
-            <p>Delete?</p>
+            <p className="hidden">
+            <label htmlFor="content">
+            Delete?
             </label>
             <input
               type="text"
               name="DELETE"
               placeholder = {this.props.content}
-              value={this.props.id}
+              defaultValue={this.props.id}
             />
             </p>
           <p>
-            <button class="deleteButton" action="submit" name='DELETE' value={this.props.id}>DELETE</button>
+            <button className="deleteButton" action="submit" name='DELETE' value={this.props.id}>DELETE</button>
           </p>        
           </form>
       </div>

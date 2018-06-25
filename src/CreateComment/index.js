@@ -53,7 +53,7 @@ class CreateComment extends Component{
       <div className="CreateComment">
         <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
           <p>
-            <label for="content">Content</label>
+            <label htmlFor="content">Content</label>
             <input
               type="text"
               name="content"
