@@ -54,9 +54,10 @@ app.get('/comments.json', (request, response) => {
     });
   });
 
-const searchArr = []
+let searchArr = []
 
 app.post('/api-events.json', (request, response) => {
+  searchArr = [];
   const search = {
     search: request.body.search,
   }
