@@ -9,13 +9,6 @@ CREATE TABLE users (
     password_digest VARCHAR(255)
 );
 
-CREATE TABLE comments (
-    id SERIAL PRIMARY KEY NOT NULL,
-    user_id INT REFERENCES users(id),
-    event_id INT REFERENCES events(id),
-    content TEXT
-);
-
 CREATE TABLE artists
 (
     id SERIAL PRIMARY KEY NOT NULL,
@@ -31,5 +24,12 @@ CREATE TABLE events (
     venue VARCHAR(255),
     address VARCHAR(255),
     ticket_link VARCHAR(500)
+);
+
+CREATE TABLE comments (
+    id SERIAL PRIMARY KEY NOT NULL,
+    user_id INT REFERENCES users(id),
+    event_id INT REFERENCES events(id),
+    content TEXT
 );
 
