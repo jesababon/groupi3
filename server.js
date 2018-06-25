@@ -9,7 +9,6 @@ const jsonParser = bodyParser.json();
 const saltRounds = 10;
 const Event = require('./models/Event');
 const Comment = require('./models/Comment');
-const secret = require('./config.js');
 require('dotenv').config();
 const mode = process.env.NODE_ENV;
 const apiKey = process.env.BANDSINTOWN_KEY;
