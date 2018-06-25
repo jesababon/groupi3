@@ -39,13 +39,6 @@ app.use('/static', express.static('build/static'));
 
 console.log('hello world');
 
-// app.get('/events.json', (request,response) => {
-//       Event.all()
-//       .then(event => {
-//       response.json(event);
-//       });
-// });
-
 app.get('/comments.json', (request, response) => {
   Comment.all()
   .then(comments => {    
@@ -57,6 +50,7 @@ app.get('/comments.json', (request, response) => {
 let searchArr = []
 
 app.post('/api-events.json', (request, response) => {
+  helper.clearArray(searchArr)
   searchArr = [];
   const search = {
     search: request.body.search,
@@ -65,17 +59,18 @@ app.post('/api-events.json', (request, response) => {
   bandsintown
     .getArtistEventList(search.search)
     .then(events => {
-      console.log(events);
+      // console.log(events);
       response.json(events);
     });
 });
 
 app.get('/api-events.json', (request, response) => {
   console.log(searchArr);
-  
   bandsintown
     .getArtistEventList(searchArr[0])
     .then(events => {
+      console.log(events);
+      
       response.json(events);
     });
 });
