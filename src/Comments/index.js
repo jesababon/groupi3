@@ -30,7 +30,7 @@ componentDidMount() {
       <CreateComment />
       {this.state.comments.map(comment => {
         return (
-        <div className="showComments">
+        <div className="showComments" key={comment.id}>
         ID {comment.id} {comment.content}
         <UpdateComment 
         id={comment.id}
