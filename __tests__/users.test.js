@@ -8,9 +8,18 @@ describe('getId(url)', () => {
   })
 })
 
-describe('getEventId(params', () => {
+describe('getEventId(params)', () => {
   test('should return an 8 digit parameter as NaN', () => {
     let id = helper.getEventId('16653435')
     expect(id).toBe(NaN)
   })
 })
+
+describe('clearArray(array)', () => {
+  test('should return an empty array', () => {
+    let testArray = [1,2]
+    let array = helper.clearArray(testArray)
+    expect(array.length).toBe(0)
+  })
+})
+
