@@ -1,3 +1,8 @@
+div.App{
+    grid-area: c;
+}
+
+
 h2 {
     color: rgb(167, 164, 164);
     size: 2em;
