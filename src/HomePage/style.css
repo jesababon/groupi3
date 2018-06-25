@@ -14,7 +14,12 @@ body{
     width: auto;
 } */
 
+header{
+    grid-column: 1 / 4;
+}
+
 nav{
+
     border: black;
     font-size: 20px;
 }
@@ -27,7 +32,7 @@ nav{
 
 div{
     align-items: center;
-    grid-column: 1/ 4;
+    grid-column: 1 / 4;
     padding-left: 1em;
 
 }
