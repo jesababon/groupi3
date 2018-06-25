@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import "./style.css";
 
 class DeleteComment extends Component{
@@ -13,22 +12,6 @@ class DeleteComment extends Component{
     this.onFormChange = this.onFormChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
     }
-
-    // componentDidMount() {
-    //   let id = this.props.match.params.id;
-    //   // let num = url.replace(/delete-comment/i, '')
-    //   // let id = num.replace(/\//g, '')
-    //   console.log(id);
-    //   fetch(`/comment/${id}.json`)
-    //     .then(response => response.json())
-    //     .then(comment => {
-    //       console.log(comment);
-    //       this.setState({
-    //         id: comment.id,
-    //         content: comment.content
-    //       });
-    //     });
-    // }
 
      onFormChange(evt) {
     const element = evt.target;
@@ -60,26 +43,25 @@ class DeleteComment extends Component{
   }
 
   render() {
-    //
     if (this.state.deleted === true) {
       return window.location.reload();
     }
     return (
       <div className="DeleteComment">
         <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
-            <p class="hidden">
-            <label for="content">
-            <p>Delete?</p>
+            <p className="hidden">
+            <label htmlFor="content">
+            Delete?
             </label>
             <input
               type="text"
               name="DELETE"
               placeholder = {this.props.content}
-              value={this.props.id}
+              defaultValue={this.props.id}
             />
             </p>
           <p>
-            <button class="deleteButton" action="submit" name='DELETE' value={this.props.id}>DELETE</button>
+            <button className="deleteButton" action="submit" name='DELETE' value={this.props.id}>DELETE</button>
           </p>        
           </form>
       </div>

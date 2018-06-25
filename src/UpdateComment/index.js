@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
-import OneComment from "../OneComment"
 import "./style.css";
 
 class UpdateComment extends Component{
@@ -67,7 +65,7 @@ class UpdateComment extends Component{
     return (      
       <div className="UpdateComment">
         <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
-            <label for="content">
+            <label htmlFor="content">
             <p>Update?</p>
             </label>
             <input
