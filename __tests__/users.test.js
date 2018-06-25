@@ -22,3 +22,4 @@ describe('clearArray(array)', () => {
     expect(array.length).toBe(0)
   })
 })
+

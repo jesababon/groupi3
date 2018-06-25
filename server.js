@@ -39,12 +39,6 @@ app.use('/static', express.static('build/static'));
 
 console.log('hello world');
 
-// app.get('/events.json', (request,response) => {
-//       Event.all()
-//       .then(event => {
-//       response.json(event);
-//       });
-// });
 
 app.get('/comments.json', (request, response) => {
   Comment.all()
@@ -57,6 +51,7 @@ app.get('/comments.json', (request, response) => {
 let searchArr = []
 
 app.post('/api-events.json', (request, response) => {
+  helper.clearArray(searchArr)
   searchArr = [];
   const search = {
     search: request.body.search,
