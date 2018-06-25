@@ -7,6 +7,7 @@ class CreateComment extends Component{
     
       this.state = {
          username: "",
+         events_id: "",
          content: "",
          created: false
       }
@@ -26,6 +27,7 @@ class CreateComment extends Component{
     evt.preventDefault();
     const newComment = {
       username: this.state.username,
+      events_id: this.state.events.id,
       content: this.state.content
     }
     fetch('/comments', {
@@ -51,7 +53,7 @@ class CreateComment extends Component{
       <div className="CreateComment">
         <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
           <p>
-            <label for="content">Content</label>
+            <label htmlFor="content">Content</label>
             <input
               type="text"
               name="content"

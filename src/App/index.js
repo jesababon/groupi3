@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import EventPage from "../EventPage";
 import Homepage from '../HomePage';
 import Login from "../Login";
@@ -41,13 +41,13 @@ class App extends Component {
           <div className= "title">
           Groupi3
           </div>
-          {!this.state.userLoggedIn && (
+          {this.state.userLoggedIn && (
             <div className="App">
               <Login onUserLoggedIn={this.updateUserLoggedIn} />
               <Register onUserLoggedIn={this.updateUserLoggedIn} />
             </div>
           )}
-          {this.state.userLoggedIn && (
+          {!this.state.userLoggedIn && (
             <div className="container">
               <div>
                 <Route path="/" exact component={Homepage} />

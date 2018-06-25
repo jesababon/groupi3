@@ -1,4 +1,4 @@
-import React, { Component, Link } from "react";
+import React, { Component} from "react";
 import "./style.css";
 import CreateComment from "../CreateComment";
 import UpdateComment from "../UpdateComment";
@@ -29,10 +29,9 @@ componentDidMount() {
       <div className="comments">
       <CreateComment />
       {this.state.comments.map(comment => {
-        let comments = [comment];
         return (
-        <div className="showComments">
-        <p>ID {comment.id} {comment.content}
+        <div className="showComments" key={comment.id}>
+        ID {comment.id} {comment.content}
         <UpdateComment 
         id={comment.id}
         content={comment.content}
@@ -41,7 +40,6 @@ componentDidMount() {
         id={comment.id}
         content={comment.content}
         />
-        </p>
         </div>
         );
       })}

@@ -2,7 +2,6 @@ import React, {
   Component
 } from "react";
 import "./style.css";
-import Comments from '../Comments';
 
 class OneComment extends Component {
   constructor(props) {
@@ -14,9 +13,7 @@ class OneComment extends Component {
   }
 
   componentDidMount() {
-    let id = this.props.match.params.id
-    // let num = url.replace(/comment/i, '') 
-    // let id = num.replace(/\//g,'')     
+    let id = this.props.match.params.id  
     console.log(id);
     fetch(`/comment/${id}.json`)
       .then(response => response.json())
