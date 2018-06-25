@@ -4,43 +4,65 @@ import EventDetails from '../EventDetails';
 
 class EventPage extends Component {
 
-     constructor(props){
-          super(props)
+    constructor(props) {
+        super(props)
 
-          this.state = {
-             events: []
-          }
-      }
-  
-  componentDidMount () {
-      fetch('/api-events.json')
-      .then(response => response.json())
-      .then(events => {
-          this.setState({
-              events: events
-          });
-      });
-  }
+        this.state = {
+            events: []
+        }
+    }
 
- render(){
-       return(     
-         <div className="EventPage">
-          {this.state.events.map( (event, index) =>{
-            return <EventDetails 
-                    id={index}
-                    event_id={event.id}
-                    title={event.title}
-                    date={event.formatted_datetime}
-                    venue={event.venue.name}
-                    location={event.formatted_location}
-                    facebook_url={event.facebook_rsvp_url}
-                    ticket_status={event.ticket_status}
-                    ticket_link={event.ticket_url} 
-                    />
-          })}
-        </div>
-       );
+    componentDidMount() {
+        fetch('/api-events.json')
+            .then(response => response.json())
+            .then(events => {
+                this.setState({
+                    events: events
+                });
+            });
+    }
+
+    render() {
+        return (
+            <div>
+                {
+                    this.state.events && (
+                        <div className="EventPage">
+
+                            {
+                                this.state.events.map((event, index) => {
+                                    return <EventDetails
+                                        id={index}
+                                        event_id={event.id}
+                                        title={event.title}
+                                        date={event.formatted_datetime}
+                                        venue={event.venue.name}
+                                        location={event.formatted_location}
+                                        facebook_url={event.facebook_rsvp_url}
+                                        ticket_status={event.ticket_status}
+                                        ticket_link={event.ticket_url}
+                                    />
+                                })
+                            }
+                        </div>
+                    )
+                }
+
+                {
+                    !this.state.events.length && (
+                        <div className="EventPage">
+                            {
+                             <h1>There are no events for that artist</h1>
+                            }
+                         </div>
+                    )}
+
+            </div>
+
+        );
     };
 }
 
 export default EventPage;
+
+

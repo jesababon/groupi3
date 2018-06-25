@@ -39,7 +39,6 @@ app.use('/static', express.static('build/static'));
 
 console.log('hello world');
 
-
 app.get('/comments.json', (request, response) => {
   Comment.all()
   .then(comments => {    
@@ -67,10 +66,11 @@ app.post('/api-events.json', (request, response) => {
 
 app.get('/api-events.json', (request, response) => {
   console.log(searchArr);
-  
   bandsintown
     .getArtistEventList(searchArr[0])
     .then(events => {
+      console.log(events);
+      
       response.json(events);
     });
 });

@@ -35,7 +35,6 @@ class App extends Component {
 
   render() {
     return (
-
       <Router>
         <div>
           <div className= "title">
@@ -59,8 +58,7 @@ class App extends Component {
                 <Route path="/update-comment/:id" exact component={UpdateComment} />
                 <Route path="/delete-comment/:id" exact component={DeleteComment} />
               </div>
-            </div>
-            
+            </div> 
           )}
         </div>
       </Router>
