@@ -9,8 +9,10 @@ const jsonParser = bodyParser.json();
 const saltRounds = 10;
 const Event = require('./models/Event');
 const Comment = require('./models/Comment');
-const secret = require('./config.js');
-const bandsintown = require('bandsintown')(secret.key);
+require('dotenv').config();
+const mode = process.env.NODE_ENV;
+const apiKey = process.env.BANDSINTOWN_KEY;
+const bandsintown = require('bandsintown')(apiKey);
 const cookieParser = require('cookie-parser');
 const helper = require('./src/helpers/helper')
 
@@ -47,16 +49,15 @@ console.log('hello world');
 app.get('/comments.json', (request, response) => {
   Comment.all()
   .then(comments => {    
-     
     // console.log(comments);
-       
     response.json(comments)
     });
   });
 
-const searchArr = []
+let searchArr = []
 
 app.post('/api-events.json', (request, response) => {
+  searchArr = [];
   const search = {
     search: request.body.search,
   }
@@ -109,8 +110,7 @@ app.post("/register", (request, response) => {
     })
     .then(user => {
       request.session.loggedIn = true;
-      request.session.userId = user.id;
-      
+      request.session.userId = user.id; 
       response.json(user);
     });
 });

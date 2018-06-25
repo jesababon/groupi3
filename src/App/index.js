@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import EventPage from "../EventPage";
 import Homepage from '../HomePage';
 import Login from "../Login";
@@ -11,6 +11,7 @@ import CreateComment from "../CreateComment";
 import OneComment from "../OneComment";
 import UpdateComment from "../UpdateComment";
 import DeleteComment from "../DeleteComment";
+import Search from "../Search";
 
 
 class App extends Component {
@@ -38,16 +39,19 @@ class App extends Component {
 
       <Router>
         <div>
-          <div className= "title">
-          Groupi3
-          </div>
-          {!this.state.userLoggedIn && (
+          <nav className="navigation">
+          <header>
+            <h1 className="title">Groupi3</h1>
+            <Search />
+          </header>
+          </nav>
+          {this.state.userLoggedIn && (
             <div className="App">
               <Login onUserLoggedIn={this.updateUserLoggedIn} />
               <Register onUserLoggedIn={this.updateUserLoggedIn} />
             </div>
           )}
-          {this.state.userLoggedIn && (
+          {!this.state.userLoggedIn && (
             <div className="container">
               <div>
                 <Route path="/" exact component={Homepage} />
@@ -60,7 +64,6 @@ class App extends Component {
                 <Route path="/delete-comment/:id" exact component={DeleteComment} />
               </div>
             </div>
-            
           )}
         </div>
       </Router>

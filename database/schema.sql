@@ -12,6 +12,7 @@ CREATE TABLE users (
 CREATE TABLE comments (
     id SERIAL PRIMARY KEY NOT NULL,
     user_id INT REFERENCES users(id),
+    event_id INT REFERENCES events(id),
     content TEXT
 );
 
