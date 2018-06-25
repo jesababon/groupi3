@@ -3,7 +3,8 @@ body{
     background: rgb(90, 9, 90);
 }
 
-div.title {
+.title {
+    grid-area: h;
     color: rgb(255, 208, 0);
     font-size: 6em;
     font-family: 'Poor Story', Hind; 
@@ -31,7 +32,7 @@ div.title {
 }
 
 
-header {
+h1 {
     text-align: center;
     border: 2px black solid;
 }

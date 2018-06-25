@@ -5,36 +5,14 @@ body{
     justify-content: center;
 }
 
-div.title {
-    color: rgb(255, 208, 0);
-    font-size: 6em;
-    font-family: 'Poor Story', Hind; 
-    transform: shake;
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-    transform: translate3d(0, 0, 0);
-}
-
-@keyframes shake {
-  5%, 100% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  
-   20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
-
 .container{
     color: rgb(255,208,0);
 }
+
+/* div.container{
+    grid-area: c;
+    width: auto;
+} */
 
 nav{
     border: black;
@@ -46,6 +24,7 @@ nav{
     font-size: 4em;
     text-align: center;
  } 
+
 div{
     align-items: center;
     grid-column: 1/ 4;

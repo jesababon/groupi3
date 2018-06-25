@@ -51,10 +51,6 @@ class HomePage extends Component {
 
     return (
       <div className="container">
-        <nav>
-          <span className="eventRegister">Register LogIn</span>
-          <span><Link to="/events">See All Events</Link></span>
-        </nav>
         <div className="landingBody">
           <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
             <p>Enter an Artist Name to see their events</p>
