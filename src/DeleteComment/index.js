@@ -14,22 +14,6 @@ class DeleteComment extends Component{
     this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
-    // componentDidMount() {
-    //   let id = this.props.match.params.id;
-    //   // let num = url.replace(/delete-comment/i, '')
-    //   // let id = num.replace(/\//g, '')
-    //   console.log(id);
-    //   fetch(`/comment/${id}.json`)
-    //     .then(response => response.json())
-    //     .then(comment => {
-    //       console.log(comment);
-    //       this.setState({
-    //         id: comment.id,
-    //         content: comment.content
-    //       });
-    //     });
-    // }
-
      onFormChange(evt) {
     const element = evt.target;
     const name = element.name;
@@ -60,7 +44,6 @@ class DeleteComment extends Component{
   }
 
   render() {
-    //
     if (this.state.deleted === true) {
       return window.location.reload();
     }
