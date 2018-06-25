@@ -36,3 +36,8 @@ footer{
     border: 2px violet solid;
 }
 
+div.showComments{
+    background: rgb(90, 9, 90);
+    /* border-radius: 15px; */
+    outline: 1px dashed white;
+}
