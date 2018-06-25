@@ -4,7 +4,7 @@ body{
 
 .container{
     display: grid;
-    max-height: 100%;
+    max-height: auto;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr .5fr auto .5fr;
     grid-template-areas:
@@ -26,7 +26,7 @@ nav{
 }
 
 .landingBody{
-    grid-area: l;
+    grid-area: h;
     border: 2px purple solid;
     padding: 40%;
 }
@@ -35,3 +35,4 @@ footer{
     grid-area: f;
     border: 2px violet solid;
 }
+

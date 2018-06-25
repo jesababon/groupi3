@@ -2,54 +2,41 @@ body{
     margin: 0 auto;
     max-width: 50em;
     padding: 1em 0;
-    text-align: center;
     justify-content: center;
 }
 
-.grid  {
-    display: flex;
-    align-items: center;
-}
+
 .container{
-    display: grid;
-    max-height: 100%;
-    grid-template-columns: 150px 150px;
-    grid-template-rows: repeat(2, 100px);
     color: rgb(255,208,0);
-    
-}
-
-
-
-
-header, footer {
-    border: 2em blue;
 }
 
 nav{
     border: black;
-    grid-column: 1 / 4;
     font-size: 20px;
 }
 
 .landingBody{
-    grid-column: 1 / 4;
-    grid-auto-rows:  yellow;
-    /* padding: 40%; */
+    padding: 40%; 
     font-size: 4em;
-}
+    text-align: center;
+ } 
 div{
-    grid-column: 2 / 4;
+    /* grid-column: 4 / 4; */
     padding-left: 1em;
 
 }
+
 footer{
-    column-span: unset; 
+    grid-area: f;
     font-size:20px;
-    grid-column: 2 / 8;
+    
+    
     font-family: Hind;
 }
+.eventRegister{
+    grid-area: h;
 
+}
 a:link {
     color:white;
 }

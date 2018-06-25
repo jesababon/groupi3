@@ -53,8 +53,7 @@ class HomePage extends Component {
       <div className="container">
         <nav>
           <span className="eventRegister">Register LogIn</span>
-          <span>Register LogIn</span>
-          <Link to="/events">See All Events</Link>
+          <span><Link to="/events">See All Events</Link></span>
         </nav>
         <div className="landingBody">
           <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
@@ -62,8 +61,10 @@ class HomePage extends Component {
             <input type="text" name='search'/>
             <button type="submit">Find Events</button>
           </form>
+          <div className="footer">
+            <footer>Copyright Group3</footer>
+          </div>
         </div>
-        <footer>Copyright Group3</footer>
       </div>
     );
   }
