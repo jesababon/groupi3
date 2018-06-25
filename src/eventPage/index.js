@@ -24,7 +24,7 @@ class EventPage extends Component {
 
  render(){
        return(     
-         <div className="EventPage">
+         <div className="EventPage" key={"allEvents"}>
           {this.state.events.map( (event, index) =>{
             return <EventDetails 
                     id={index}
@@ -36,6 +36,7 @@ class EventPage extends Component {
                     facebook_url={event.facebook_rsvp_url}
                     ticket_status={event.ticket_status}
                     ticket_link={event.ticket_url} 
+                    key={event.index}
                     />
           })}
         </div>

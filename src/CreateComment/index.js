@@ -7,7 +7,7 @@ class CreateComment extends Component{
     
       this.state = {
          username: "",
-         events_id: "",
+         event_id: "",
          content: "",
          created: false
       }
@@ -27,7 +27,7 @@ class CreateComment extends Component{
     evt.preventDefault();
     const newComment = {
       username: this.state.username,
-      events_id: this.state.events.id,
+      events_id: this.state.event_id,
       content: this.state.content
     }
     fetch('/comments', {
