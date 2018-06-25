@@ -38,6 +38,10 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <header>
+          <h1 className="title">Groupi3</h1>
+          </header>
+          {!this.state.userLoggedIn && (
             <div className="App">
               <Login onUserLoggedIn={this.updateUserLoggedIn} />
               <Register onUserLoggedIn={this.updateUserLoggedIn} />
@@ -45,12 +49,6 @@ class App extends Component {
           )}
           {this.state.userLoggedIn && (
             <div className="container">
-              <nav className="navigation">
-                <header>
-                  <h1 className="title">Groupi3</h1>
-                </header>
-                <Search />
-              </nav>
               <div>
                 <Route path="/" exact component={Homepage} />
                 <Route path="/events" exact component={EventPage} />

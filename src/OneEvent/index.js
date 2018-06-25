@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import EventDetail from '../EventDetail';
+import Search from '../Search';
 
 const helper = require('../helpers/helper')
 
@@ -45,6 +46,9 @@ class OneEvent extends Component {
     render() {
         return (
             <div className="OneEvent">
+            <nav className="navigation">
+                <Search />
+              </nav>
                 <EventDetail
                     event_id={this.state.id}
                     title={this.state.title}

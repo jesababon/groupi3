@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Redirect } from 'react-router'
-import { Link } from "react-router-dom";
 import "./style.css";
 
 class HomePage extends Component {
