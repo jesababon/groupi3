@@ -3,10 +3,10 @@ body{
     background: rgb(90, 9, 90);
 }
 
-.title {
+h1.title {
     grid-area: h;
     color: rgb(255, 208, 0);
-    font-size: 6em;
+    font-size: 8em;
     font-family: 'Poor Story', Hind; 
     transform: shake;
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
@@ -44,7 +44,7 @@ h2 {
 
 p { 
     font-size: 20px;
-    color: black;
+    /* color: black; */
     font-family: 'Oxygen', sans-serif;
 }
 
