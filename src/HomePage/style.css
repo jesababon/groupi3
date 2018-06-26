@@ -3,6 +3,7 @@ body{
     max-width: 50em;
     padding: 1em 0;
     justify-content: center;
+    text-align: center;
 }
 
 .container{
@@ -33,7 +34,7 @@ nav{
 div{
     align-items: center;
     grid-column: 1 / 4;
-    padding-left: 1em;
+    /* padding-left: 1em; */
 
 }
 

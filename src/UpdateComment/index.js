@@ -66,7 +66,7 @@ class UpdateComment extends Component{
       <div className="UpdateComment">
         <form onChange={this.onFormChange} onSubmit={this.onFormSubmit}>
             <label htmlFor="content">
-            <p>Update?</p>
+            <p>UPDATE</p>
             </label>
             <input
               type="text"
