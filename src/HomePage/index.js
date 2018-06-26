@@ -59,8 +59,8 @@ class HomePage extends Component {
           <div className="footer">
             <footer>Copyright Group3</footer>
           </div>
+          </div>
         </div>
-      </div>
     );
   }
 }
