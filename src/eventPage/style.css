@@ -3,6 +3,5 @@ body{
 }
 
 div {
-    display: grid;
     max-height: 100%;
 }
