@@ -13,20 +13,28 @@ class EventPage extends Component {
       }
   
   componentDidMount () {
+      console.log('component mounted');
       fetch('/api-events.json')
       .then(response => response.json())
       .then(events => {
           this.setState({
               events: events
+          },()=> {
+            //   console.log('logging state', this.state.events);
           });
       });
+  }
+
+  componentDidUpdate () {
+      console.log('updated'); 
   }
 
  render(){
        return(   
         <div>
            {
-               this.state.events && (
+               this.state.events.length && 
+            (
                    <div className="EventPage">
                            <div className="buttons">
                                <form action="/" method="get">
@@ -57,7 +65,8 @@ class EventPage extends Component {
                 }
 
                {
-                   !this.state.events.length && (
+                   !this.state.events.length && 
+                (
                        <div className="EventPage">
                         <h1>There are no events for that artist</h1>
                    </div>

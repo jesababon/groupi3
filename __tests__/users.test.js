@@ -1,6 +1,20 @@
 
 const helper = require('../src/helpers/helper')
 
+describe('sum(a,b)', () => {
+  test('should return the sum of a and b', () => {
+    let three = helper.sum(1,2);
+    expect(three).toBe(3)
+  })
+})
+
+describe('sum(a,b)', () => {
+  test('return should be greater than a and b individually', () => {
+    let three = helper.sum(1, 2);
+    expect(three).toBeGreaterThan(1) && expect(three).toBeGreaterThan(2)
+  })
+})
+
 describe('getId(url)', () => {
   test('should return an 8 digit number as a string', () => {
     let id = helper.getId("event16653435")
