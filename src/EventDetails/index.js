@@ -3,6 +3,7 @@ import "./style.css";
 class EventDetails extends Component {
   render() {
     return (
+        <div className="detailsbox">
       <div className="EventDetails" key={"oneEvent"}>
           <h4>{this.props.title}</h4>
           <p className="eventID"><strong>Event ID:</strong>{this.props.event_id}</p>
@@ -13,6 +14,8 @@ class EventDetails extends Component {
           <p><span>Tickets are {this.props.ticket_status} </span><a href={this.props.ticket_link} target="_blank">Get Tickets </a></p>
           <p><a href={'event/'+this.props.event_id}>View Details</a></p>
       </div>
+      </div>
+
     );
   }
 }

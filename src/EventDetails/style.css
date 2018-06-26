@@ -2,3 +2,12 @@
     background: grey;
     border-radius: 15px;
 }
+
+
+.detailsbox{
+    /* background-color: rgb(90, 9, 90); */
+    overflow: auto;
+    color: pink;
+    max-height: 16em;
+    border-style: inset;
+}

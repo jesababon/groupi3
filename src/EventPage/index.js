@@ -36,6 +36,11 @@ class EventPage extends Component {
                this.state.events.length && 
             (
                    <div className="EventPage">
+                           <div className="buttons">
+                               <form action="/" method="get">
+                                   <button type="submit">HOME</button>
+                               </form>
+                               </div>
                        {this.state.events.map((event, index) => {
                            return (
                                <div className="showEvents" key={index}>
