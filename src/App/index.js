@@ -41,13 +41,13 @@ class App extends Component {
           <header>
           <h1 className="title">Groupi3</h1>
           </header>
-          {!this.state.userLoggedIn && (
+          {this.state.userLoggedIn && (
             <div className="App">
               <Login onUserLoggedIn={this.updateUserLoggedIn} />
               <Register onUserLoggedIn={this.updateUserLoggedIn} />
             </div>
           )}
-          {this.state.userLoggedIn && (
+          {!this.state.userLoggedIn && (
             <div className="container">
               <div>
                 <Route path="/" exact component={Homepage} />
