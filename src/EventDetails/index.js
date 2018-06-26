@@ -3,10 +3,6 @@ import "./style.css";
 class EventDetails extends Component {
   render() {
     return (
-      <div className="buttons">
-        <form action="/" method="get">
-        <button type="submit">HOME</button>
-        </form>
         <div className="detailsbox">
       <div className="EventDetails" key={"oneEvent"}>
           <h4>{this.props.title}</h4>
@@ -19,7 +15,7 @@ class EventDetails extends Component {
           <p><a href={'event/'+this.props.event_id}>View Details</a></p>
       </div>
       </div>
-      </div>
+
     );
   }
 }
