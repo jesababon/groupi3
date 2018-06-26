@@ -33,7 +33,7 @@ class EventPage extends Component {
        return(   
         <div>
            {
-            //    this.state.events.length && 
+               this.state.events.length && 
             (
                    <div className="EventPage">
                        {this.state.events.map((event, index) => {
@@ -60,7 +60,7 @@ class EventPage extends Component {
                 }
 
                {
-                //    !this.state.events.length && 
+                   !this.state.events.length && 
                 (
                        <div className="EventPage">
                         <h1>There are no events for that artist</h1>
