@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+:wqimport React, { Component } from "react";
 import "./style.css";
 import EventDetail from '../EventDetail';
 import Search from '../Search';
